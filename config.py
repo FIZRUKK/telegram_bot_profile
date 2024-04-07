@@ -1,4 +1,4 @@
-TOKEN = '6157851092:AAGx4mmUHEOjBs3Ai9KQPrUJEOJG5R99c60'
+TOKEN = '7016599231:AAHoZq2krKZFqinIhvB2BMbP81IOQzjX5zo'
 
 ENGINE = 'sqlite+aiosqlite:///database.db'
 
