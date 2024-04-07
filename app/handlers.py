@@ -12,10 +12,11 @@ admins = ADMINS
 
 id_messages = [] # Чтобы удалить ненужные сообщения
 
+
 # start
 @rt.message(CommandStart())
 async def cmd_start(message: Message):
-    main_photo = FSInputFile('app\media\contact.png')
+    main_photo = 'AgACAgIAAxkBAAMUZhKEpH9qedQTS-dlgvhaWgAB0mdoAALn2DEbRRaRSHypFGK9B-o4AQADAgADeQADNAQ'
     text = '<b>Поделитесь контактом нажав на кнопку <u>Поделиться контактом</u>, что бы я мог оперативно с вами связаться</b>'
     sent_message_bot = await message.answer_photo(photo=main_photo, caption=text, reply_markup = kb.contact)
     sent_message_user = message.message_id
@@ -25,7 +26,7 @@ async def cmd_start(message: Message):
 # Share contact
 @rt.message(F.content_type == ContentType.CONTACT)
 async def get(message: Message):
-    main_photo = FSInputFile('app\media\main.png')
+    main_photo = 'AgACAgIAAxkBAAMYZhKE95Vex57QUk5SHVMZwfFalPoAAu3YMRtFFpFIzEHk3ScTXHUBAAMCAAN5AAM0BA'
     user_id = message.from_user.id
     user_name = message.from_user.username
     first_name = message.from_user.first_name
@@ -51,7 +52,7 @@ async def get(message: Message):
 # Not share
 @rt.message(F.text == 'Нет, спасибо')  
 async def not_share_contact(message: Message):
-    main_photo = FSInputFile('app\media\main.png')
+    main_photo = 'AgACAgIAAxkBAAMYZhKE95Vex57QUk5SHVMZwfFalPoAAu3YMRtFFpFIzEHk3ScTXHUBAAMCAAN5AAM0BA'
     user_id = message.from_user.id
     user_name = message.from_user.username
     first_name = message.from_user.first_name
@@ -74,7 +75,7 @@ async def not_share_contact(message: Message):
 @rt.callback_query(F.data == 'about_me')
 async def about_me(callback: CallbackQuery):
     # Путь к новой фотографии
-    photo_about_me = FSInputFile('app\media\me.png')
+    photo_about_me = 'AgACAgIAAxkBAAMaZhKFNjaaZdTNmRBhF643p0vmXfoAAu7YMRtFFpFIryX6b5CyL4cBAAMCAAN5AAM0BA'
     
     text = 'Меня зовут Даниил\nЯ являюсь опытным Python разработчиком и смогу сделать качественное решение для вашего бизнеса, с помощью автоматизации.'
     media = InputMediaPhoto(media=photo_about_me, caption=text)
@@ -84,7 +85,7 @@ async def about_me(callback: CallbackQuery):
 # portfolio 
 @rt.callback_query(F.data == 'portfolio')
 async def portfolio(callback: CallbackQuery):
-    photo_portfolio = FSInputFile('app\media\portfolio.png')
+    photo_portfolio = 'AgACAgIAAxkBAAMcZhKFRwl9Hjkmg4zZ892BPUCzliwAAvDYMRtFFpFIh1TSmvEX1G8BAAMCAAN5AAM0BA'
     
     text = 'Несколько моих работ'
     media = InputMediaPhoto(media=photo_portfolio, caption=text)
@@ -107,7 +108,7 @@ async def call_me(callback: CallbackQuery):
 # FAQ
 @rt.callback_query(F.data == 'FAQ')
 async def FAQ(callback: CallbackQuery):
-    photo_FAQ = FSInputFile('app\media\FAQ.png')
+    photo_FAQ = 'AgACAgIAAxkBAAMeZhKFXCISaleGWMwZprim0GjdQ2EAAvLYMRtFFpFIPKXgbRy-QmEBAAMCAAN5AAM0BA'
     
     text = 'Часто задаваемые вопросы'
     media = InputMediaPhoto(media=photo_FAQ, caption=text)
@@ -147,7 +148,7 @@ async def data(callback: CallbackQuery):
 # Back Button
 @rt.callback_query(F.data == 'back')
 async def back(callback: CallbackQuery):
-    main_photo = FSInputFile('app\media\main.png')
+    main_photo = 'AgACAgIAAxkBAAMYZhKE95Vex57QUk5SHVMZwfFalPoAAu3YMRtFFpFIzEHk3ScTXHUBAAMCAAN5AAM0BA'
     
     first_name = callback.from_user.first_name
     text = f'<b>Доброго времени суток <i>{first_name}</i>\n\nРад вас видеть в своем телеграм-боте\nВы можете ознакомиться с частичкой моих работ и заказать\n\n<u>ЛУЧШЕЕ РЕШЕНИЕ</u> - для вашего бизнеса\n\nОставьте заявку, и я свяжусь с вами в самые короткие сроки!</b>'
