@@ -1,0 +1,5 @@
+TOKEN = '6157851092:AAGx4mmUHEOjBs3Ai9KQPrUJEOJG5R99c60'
+
+ENGINE = 'sqlite+aiosqlite:///database.db'
+
+ADMINS = [2085376749]
